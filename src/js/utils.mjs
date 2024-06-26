@@ -33,3 +33,35 @@ export function renderListWithTemplate(templateFn, parentElement, list, position
   const htmlStrings = list.map(templateFn);
   parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
 }
+
+export function renderWithTemplate(template, parentElement, data, callback) {
+  parentElement.insertAdjacentHTML("afterbegin", template.innerHTML)
+  if(callback) callback(data)
+}
+
+export async function loadHeaderFooter() {
+  //load header footer from partials
+  const footerTemplate = (await loadTemplate("/partials/footer.html"))
+  const headerTemplate = (await loadTemplate("/partials/header.html"))
+  // grab the header/footer from DOM
+  const footerParent = qs("#main-footer")
+  const headerParent = qs("#main-header")
+  // render the header/footer
+  renderWithTemplate(footerTemplate, footerParent)
+  renderWithTemplate(headerTemplate, headerParent)
+}
+
+export async function loadTemplate(path) {
+  const html = await fetch(path).then(convertToText);
+  const template = document.createElement("template");
+  template.innerHTML = html;
+  return template;
+}
+
+function convertToText(res) {
+  if (res.ok) {
+    return res.text();
+  } else {
+    throw new Error("Bad Response");
+  }
+}
