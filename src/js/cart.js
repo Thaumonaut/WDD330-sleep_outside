@@ -1,22 +1,28 @@
-import { getLocalStorage, setLocalStorage, loadHeaderFooter } from "./utils.mjs";
+import {
+  getLocalStorage,
+  setLocalStorage,
+  loadHeaderFooter,
+} from "./utils.mjs";
 
 function renderCartContents() {
   const cartItems = getLocalStorage("so-cart") || [];
-  const htmlItems = cartItems.map((item, index) => cartItemTemplate(item, index));
+  const htmlItems = cartItems.map((item, index) =>
+    cartItemTemplate(item, index),
+  );
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
 
-  document.querySelectorAll(".cart-remove").forEach(element => {
-    element.addEventListener("click", handleCartRemove)
+  document.querySelectorAll(".cart-remove").forEach((element) => {
+    element.addEventListener("click", handleCartRemove);
   });
 }
 
 function handleCartRemove(elem) {
   const button = elem.srcElement;
-  const index = button.getAttribute("data-index")
+  const index = button.getAttribute("data-index");
 
   const cartLS = getLocalStorage("so-cart") || [];
   cartLS.splice(index, 1);
-  setLocalStorage("so-cart", cartLS)
+  setLocalStorage("so-cart", cartLS);
   renderCartContents();
 }
 
