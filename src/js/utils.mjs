@@ -65,3 +65,13 @@ function convertToText(res) {
     throw new Error("Bad Response");
   }
 }
+
+export function Capitalize(text) {
+  const textSplit = text.split("")
+  let textSpaces = textSplit.map((char, index) => {if(char == " " || char == "_" || char == "-") return index}).filter(x=>x);
+  textSplit[0] = textSplit[0].toUpperCase();
+  textSpaces.forEach(spaceIndex => {
+    textSplit[spaceIndex + 1] = textSplit[spaceIndex + 1].toUpperCase()
+  });
+  return textSplit.join("")
+}
