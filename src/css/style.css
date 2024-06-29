@@ -237,9 +237,8 @@ button {
   border-top: 2px solid white;
 }
 
-
 .product-selector a:hover {
-  border: 2px solid rgba(5, 5, 5, .2);
+  border: 2px solid rgba(5, 5, 5, 0.2);
   border-bottom: solid 2px black;
 }
 
@@ -265,8 +264,6 @@ button {
   background: rgba(255, 0, 0, 0.5);
   color: rgb(255, 255, 255);
 }
-
-
 
 @media screen and (min-width: 500px) {
   body {
