@@ -125,7 +125,7 @@ button {
 .product-list {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: start;
   list-style-type: none;
   padding: 0;
 }
@@ -198,6 +198,10 @@ button {
   grid-column: 3;
 }
 
+.cart-card__quantity input {
+  max-width: 50px;
+}
+
 .cart-card__price {
   grid-row: 2;
   grid-column: 3;
@@ -240,13 +244,11 @@ button {
 }
 
 .cart-remove {
-  position: absolute;
+  grid-column: 4 / 5;
+  grid-row: 1 / 2;
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 5px;
-  right: 5px;
-  width: 1rem;
   height: 10px;
   background: none;
   color: red;
@@ -260,7 +262,6 @@ button {
 }
 
 .cart-remove:hover {
-  position: absolute;
   background: rgba(255, 0, 0, 0.5);
   color: rgb(255, 255, 255);
 }

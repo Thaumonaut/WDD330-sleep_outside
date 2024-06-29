@@ -14,7 +14,15 @@ export default class ProductDetails {
   }
   addToCart(){
     let currentCart = getLocalStorage("so-cart") || [];
-    currentCart.push(this.product);
+    const newItem = this.product;
+    if (!currentCart.filter(item => item.Id == newItem.Id).length) {
+      newItem.quantity = 1;
+      currentCart.push(newItem);
+    } else {
+      const index = currentCart.findIndex((item) => item.Id == newItem.Id)
+      currentCart[index].quantity += 1;
+    }
+    
     setLocalStorage("so-cart", currentCart)
   }
   renderProductDetails(){
