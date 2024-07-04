@@ -6,9 +6,11 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <script src="../js/CheckoutProcess.js" type="module"></script>
+
     <title>Sleep Outside | Checkout</title>
 
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
 
   <body>
@@ -17,6 +19,58 @@
     <main class="divider">
       <section class="products">
         <h2>Review & Place your Order</h2>
+
+        <aside>
+          <!-- co = Check Out -->
+          <h3>Subtotal</h3>
+          <p id="co-subtotal"></p>
+          <h3>Shipping Cost</h3>
+          <p id="co-shipping"></p>
+          <h3>Tax</h3>
+          <p id="co-tax"></p>
+          <h3>Order Total</h3>
+          <p id="co-total"></p>
+        </aside>
+
+        <form action="post">
+          <fieldset>
+            <legend>Name</legend>
+
+            <label for="fname">First Name</label>
+            <input type="text" name="fname" id="fname" required>
+
+            <label for="lname">Last Name</label>
+            <input type="text" name="lname" id="lname" required>
+          </fieldset>
+          <fieldset>
+            <legend>Address</legend>
+
+            <label for="address">Street Address</label>
+            <input type="text" name="Address" id="address" required>
+
+            <label for="city">City</label>
+            <input type="text" name="city" id="city" required>
+
+            <label for="state">State</label>
+            <input type="text" name="state" id="state" required>
+
+            <label for="zcode">Zip Code</label>
+            <input type="text" name="zcode" id="zcode" required>
+          </fieldset>
+          <fieldset>
+            <legend>Payment</legend>
+
+            <label for="card-number">Credit Card Number</label>
+            <input type="text" name="card-number" id="card-number" required>
+
+            <label for="exp-date">Expiration Date</label>
+            <input type="text" name="exp-date" id="exp-date" required>
+
+            <label for="sec-code">Security Code</label>
+            <input type="text" name="sec-code" id="sec-code" required>
+          </fieldset>
+          <button type="submit">Checkout</button>
+        </form>
       </section>
     </main>
 
