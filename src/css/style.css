@@ -265,6 +265,50 @@ button {
   color: rgb(255, 255, 255);
 }
 
+#checkout fieldset {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 1rem;
+}
+
+#summary {
+  gap: 0rem 1rem;
+  grid-template-columns: auto 4fr 1fr !important;
+}
+#summary .dots {
+  display: block;
+  border-bottom: 2px dotted black;
+}
+
+#checkout fieldset input {
+  max-width: 75%;
+}
+
+#checkout fieldset div {
+  margin-bottom: .5rem;
+  margin-top: .25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#checkout {
+  max-width: 800px;
+  margin: auto;
+}
+
+#checkout ul {
+  list-style-type: none;
+  width: 100%;
+}
+
+#checkout p {
+  margin: 0;
+}
+
+#checkout p::before {
+  content: "$";
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
