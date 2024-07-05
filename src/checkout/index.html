@@ -6,7 +6,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script src="../js/CheckoutProcess.js" type="module"></script>
+    <script src="../js/checkout.js" type="module"></script>
 
     <title>Sleep Outside | Checkout</title>
 
@@ -20,56 +20,81 @@
       <section class="products">
         <h2>Review & Place your Order</h2>
 
-        <aside>
-          <!-- co = Check Out -->
-          <h3>Subtotal</h3>
-          <p id="co-subtotal"></p>
-          <h3>Shipping Cost</h3>
-          <p id="co-shipping"></p>
-          <h3>Tax</h3>
-          <p id="co-tax"></p>
-          <h3>Order Total</h3>
-          <p id="co-total"></p>
-        </aside>
-
-        <form action="post">
+        <form action="post" id="checkout" name="checkout">
           <fieldset>
             <legend>Name</legend>
 
-            <label for="fname">First Name</label>
-            <input type="text" name="fname" id="fname" required>
+            <div>
+              <label for="fname">First Name</label>
+              <input type="text" name="fname" id="fname" required value="John">
+            </div>
 
-            <label for="lname">Last Name</label>
-            <input type="text" name="lname" id="lname" required>
+            <div>
+              <label for="lname">Last Name</label>
+              <input type="text" name="lname" id="lname" required value="Doe">
+            </div>
           </fieldset>
           <fieldset>
             <legend>Address</legend>
-
-            <label for="address">Street Address</label>
-            <input type="text" name="Address" id="address" required>
-
-            <label for="city">City</label>
-            <input type="text" name="city" id="city" required>
-
-            <label for="state">State</label>
-            <input type="text" name="state" id="state" required>
-
-            <label for="zcode">Zip Code</label>
-            <input type="text" name="zcode" id="zcode" required>
+            <div>
+              <label for="address">Street Address</label>
+              <input type="text" name="Address" id="address" required value="1234 Candy Lane">
+            </div>
+            <div>
+              <label for="city">City</label>
+              <input type="text" name="city" id="city" required value="SugarVille">
+            </div>
+            <div>
+              <label for="state">State</label>
+              <input type="text" name="state" id="state" required value="ST">
+            </div>
+            <div>
+              <label for="zip">Zip Code</label>
+              <input type="text" name="zip" id="zip" required value="54321">
+            </div>
           </fieldset>
           <fieldset>
             <legend>Payment</legend>
-
-            <label for="card-number">Credit Card Number</label>
-            <input type="text" name="card-number" id="card-number" required>
-
-            <label for="exp-date">Expiration Date</label>
-            <input type="text" name="exp-date" id="exp-date" required>
-
-            <label for="sec-code">Security Code</label>
-            <input type="text" name="sec-code" id="sec-code" required>
+            <div>
+              <label for="cardNumber">Credit Card Number</label>
+              <input type="text" name="cardNumber" id="cardNumber" required value="1234123412341234">
+            </div>
+            <br>
+            <div>
+              <label for="expiration">Expiration Date</label>
+              <input type="text" name="expiration" id="expiration" required value="05/31">
+            </div>
+            <div>
+              <label for="code">Security Code</label>
+              <input type="text" name="code" id="code" required value="123">
+            </div>
           </fieldset>
-          <button type="submit">Checkout</button>
+
+          <fieldset id="summary">
+            <legend>Summary</legend>
+
+              <label>Subtotal:</label>
+              <div class="dots"></div>
+              <p id="co-subtotal"></p>
+              
+              
+              <label>Shipping Cost:</label>
+              <div class="dots"></div>
+              <p id="co-shipping"></p>
+              
+              
+              <label>Tax:</label>
+              <div class="dots"></div>
+              <p id="co-tax"></p>
+              
+              
+              <label><b> Total:</b></label>
+              <div class="dots"></div>
+              <p id="co-total"></p>
+
+          </fieldset>
+
+          <button type="submit" id="submit-button">Checkout</button>
         </form>
       </section>
     </main>
