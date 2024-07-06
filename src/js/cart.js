@@ -7,7 +7,7 @@ import {
 
 function renderCartContents() {
   const cartItems = getLocalStorage("so-cart") || [];
-  CalcTotal(cartItems)
+  CalcTotal(cartItems);
   const htmlItems = cartItems.map((item, index) =>
     cartItemTemplate(item, index),
   );
@@ -28,7 +28,7 @@ function handleCartRemove(elem) {
 
   const cartLS = getLocalStorage("so-cart") || [];
   cartLS.splice(index, 1);
-  CalcTotal(cartLS)
+  CalcTotal(cartLS);
   setLocalStorage("so-cart", cartLS);
   renderCartContents();
 }
@@ -47,14 +47,17 @@ function handleQuantityChange(elem) {
   }
 
   cartLS[index].quantity = parseInt(elem.target.value);
-  CalcTotal(cartLS)
+  CalcTotal(cartLS);
 
   setLocalStorage("so-cart", cartLS);
 }
 
 function CalcTotal(items) {
-  const subtotal = items.reduce((sub, item) => sub + (item.ListPrice * item.quantity), 0.00);
-  qs("#total").innerHTML = `$${subtotal.toFixed(2)}`
+  const subtotal = items.reduce(
+    (sub, item) => sub + item.ListPrice * item.quantity,
+    0.0,
+  );
+  qs("#total").innerHTML = `$${subtotal.toFixed(2)}`;
 }
 
 function cartItemTemplate(item, index) {

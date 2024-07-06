@@ -1,5 +1,5 @@
 import ExternalServices from "./ExternalServices.mjs";
-import { getLocalStorage, qs } from "./utils.mjs";
+import { alertMessage, getLocalStorage, qs } from "./utils.mjs";
 
 const services = new ExternalServices()
 
@@ -57,13 +57,13 @@ export default class CheckoutProccess {
     json["shipping"] = this.shipping
     json["items"] = packageItems(this.list)
 
-    console.log(json)
-
     try {
       const res = await services.checkout(json)
-      console.log(res)
+      window.open("../checkout/success.html")
+      localStorage.removeItem("so-cart")
     } catch (error) {
-      console.error(error)
+      document.querySelectorAll(".alert").forEach(alert => alert.remove())
+      Object.values(error.messages).forEach(message => alertMessage(message))
     }
   }
 }

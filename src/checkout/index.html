@@ -26,72 +26,98 @@
 
             <div>
               <label for="fname">First Name</label>
-              <input type="text" name="fname" id="fname" required value="John">
+              <input
+                type="text"
+                name="fname"
+                id="fname"
+                required
+                value="John"
+              />
             </div>
 
             <div>
               <label for="lname">Last Name</label>
-              <input type="text" name="lname" id="lname" required value="Doe">
+              <input type="text" name="lname" id="lname" required value="Doe" />
             </div>
           </fieldset>
           <fieldset>
             <legend>Address</legend>
             <div>
               <label for="address">Street Address</label>
-              <input type="text" name="Address" id="address" required value="1234 Candy Lane">
+              <input
+                type="text"
+                name="address"
+                id="address"
+                required
+                value="1234 Candy Lane"
+              />
             </div>
             <div>
               <label for="city">City</label>
-              <input type="text" name="city" id="city" required value="SugarVille">
+              <input
+                type="text"
+                name="city"
+                id="city"
+                required
+                value="SugarVille"
+              />
             </div>
             <div>
               <label for="state">State</label>
-              <input type="text" name="state" id="state" required value="ST">
+              <input type="text" name="state" id="state" required value="ST" />
             </div>
             <div>
               <label for="zip">Zip Code</label>
-              <input type="text" name="zip" id="zip" required value="54321">
+              <input type="text" name="zip" id="zip" required value="54321" />
             </div>
           </fieldset>
           <fieldset>
             <legend>Payment</legend>
             <div>
               <label for="cardNumber">Credit Card Number</label>
-              <input type="text" name="cardNumber" id="cardNumber" required value="1234123412341234">
+              <input
+                type="text"
+                name="cardNumber"
+                id="cardNumber"
+                required
+                value="1234123412341234"
+              />
             </div>
-            <br>
+            <br />
             <div>
               <label for="expiration">Expiration Date</label>
-              <input type="text" name="expiration" id="expiration" required value="05/31">
+              <input
+                type="text"
+                name="expiration"
+                id="expiration"
+                required
+                value="05/31"
+              />
             </div>
             <div>
               <label for="code">Security Code</label>
-              <input type="text" name="code" id="code" required value="123">
+              <input type="text" name="code" id="code" required value="123" />
             </div>
           </fieldset>
 
           <fieldset id="summary">
             <legend>Summary</legend>
 
-              <label>Subtotal:</label>
-              <div class="dots"></div>
-              <p id="co-subtotal"></p>
-              
-              
-              <label>Shipping Cost:</label>
-              <div class="dots"></div>
-              <p id="co-shipping"></p>
-              
-              
-              <label>Tax:</label>
-              <div class="dots"></div>
-              <p id="co-tax"></p>
-              
-              
-              <label><b> Total:</b></label>
-              <div class="dots"></div>
-              <p id="co-total"></p>
+            <label>Subtotal:</label>
+            <div class="dots"></div>
+            <p id="co-subtotal"></p>
 
+            <label>Shipping Cost:</label>
+            <div class="dots"></div>
+            <p id="co-shipping"></p>
+
+            <label>Tax:</label>
+            <div class="dots"></div>
+            <p id="co-tax"></p>
+
+            <label><b> Total:</b></label>
+            <div class="dots"></div>
+            <p id="co-total"></p>
           </fieldset>
 
           <button type="submit" id="submit-button">Checkout</button>

@@ -285,8 +285,8 @@ button {
 }
 
 #checkout fieldset div {
-  margin-bottom: .5rem;
-  margin-top: .25rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.25rem;
   display: flex;
   flex-direction: column;
 }
@@ -307,6 +307,19 @@ button {
 
 #checkout p::before {
   content: "$";
+}
+
+.alert {
+  background-color: #f0a868;
+  margin: 1rem;
+  padding: 1rem;
+  font-size: smaller;
+}
+
+.alert span {
+  cursor: pointer;
+  float: right;
+  font-size: larger !important;
 }
 
 @media screen and (min-width: 500px) {
